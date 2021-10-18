@@ -43,7 +43,7 @@ const initializeMethod = async (initializeContext = {}) => {
   runtime = await start({
     layers: layers,
     initContext: initializeContext,
-    runtimeConfig: {"service":{"name":"midway-hooks-wechat"},"provider":{"name":"wechat"},"functions":{"function-index-gettodolist":{"handler":"function-index-gettodolist.handler","events":[{"event":true}]}},"package":{"include":["config.json","sitemap.json"]},"globalDependencies":{"@midwayjs/serverless-scf-starter":"*"}},
+    runtimeConfig: {"service":{"name":"midway-hooks-wechat"},"provider":{"name":"wechat"},"functions":{"function-index-handletodolist":{"handler":"function-index-handletodolist.handler","events":[{"event":true}]}},"package":{"include":["config.json","sitemap.json"]},"globalDependencies":{"@midwayjs/serverless-scf-starter":"*"}},
   });
 
   inited = true;
@@ -52,7 +52,7 @@ const initializeMethod = async (initializeContext = {}) => {
 const getHandler = (hanlderName, ...originArgs) => {
   
     if (hanlderName === 'handler') {
-      return  frameworkInstance.handleInvokeWrapper('function-index-gettodolist.handler'); 
+      return  frameworkInstance.handleInvokeWrapper('function-index-handletodolist.handler'); 
     }
   
 }

@@ -29,9 +29,7 @@
     "eslint": "^6.8.0",
     "prettier": "^2.1.2",
     "rax-app": "^3.0.0",
-    "stylelint": "^13.7.2",
-    "@ali/build-plugin-rax-app-def": "^3.0.0",
-    "@ali/build-plugin-event-tracking-register": "^1.0.0"
+    "stylelint": "^13.7.2"
   },
   "private": true,
   "originTemplate": "@rax-materials/scaffolds-app-midway-miniapp",

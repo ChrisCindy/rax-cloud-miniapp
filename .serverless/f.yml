@@ -3,8 +3,8 @@ service:
 provider:
   name: wechat
 functions:
-  function-index-gettodolist:
-    handler: function-index-gettodolist.handler
+  function-index-handletodolist:
+    handler: function-index-handletodolist.handler
     events:
       - event: true
 package:

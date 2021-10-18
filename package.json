@@ -20,7 +20,6 @@
     "rax-image": "^2.0.0",
     "rax-link": "^1.0.1",
     "rax-text": "^2.0.0",
-    "rax-use-async-effect": "^1.0.0",
     "rax-view": "^2.0.0",
     "wx-server-sdk": "^2.5.3"
   },

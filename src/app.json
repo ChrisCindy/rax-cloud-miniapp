@@ -3,6 +3,10 @@
     {
       "path": "/todo",
       "source": "pages/Todo/index"
+    },
+    {
+      "path": "/add-todo",
+      "source": "pages/AddTodo/index"
     }
   ],
   "window": {

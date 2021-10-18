@@ -1,10 +1,11 @@
 import { createElement, useState } from 'rax';
-import useAsyncEffect from 'rax-use-async-effect';
+import { usePageShow } from 'rax-app';
 import View from 'rax-view';
 import Text from 'rax-text';
 import './index.css';
 import Logo from '@/components/Logo';
-import { getTodoList } from '@/cloud/function';
+import AddButton from '@/components/AddButton';
+import { handleTodoList } from '@/cloud/function';
 
 declare global {
   namespace JSX {
@@ -21,13 +22,13 @@ interface todoItem {
 
 declare const item: todoItem;
 
-export default function Home() {
+export default function Home(props) {
   const [todos, setTodos] = useState<todoItem []>([]);
 
-  useAsyncEffect(async () => {
-    const todoList = await getTodoList();
+  usePageShow(async () => {
+    const todoList = await handleTodoList('get');
     setTodos(todoList);
-  }, []);
+  });
 
   function onTodoChanged(e) {
     const checkedTodos = e.detail.value;
@@ -36,6 +37,10 @@ export default function Home() {
       completed: checkedTodos.indexOf(todo.text) > -1,
     }));
     setTodos(newTodos);
+  }
+
+  function addTodo() {
+    props.history.push('/add-todo');
   }
 
   return (
@@ -51,6 +56,9 @@ export default function Home() {
             <Text className="todo-item-text">{item.text}</Text>
           </label>
         </checkbox-group>
+      </View>
+      <View className="todo-footer">
+        <AddButton text="Add Todo" onClickMe={addTodo} />
       </View>
     </View>
   );
