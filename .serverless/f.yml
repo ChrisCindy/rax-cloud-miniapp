@@ -1,0 +1,13 @@
+service:
+  name: midway-hooks-wechat
+provider:
+  name: wechat
+functions:
+  function-index-gettodolist:
+    handler: function-index-gettodolist.handler
+    events:
+      - event: true
+package:
+  include:
+    - config.json
+    - sitemap.json

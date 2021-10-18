@@ -1,0 +1,39 @@
+{
+  "name": "midway_faas_front_integration",
+  "author": "rax",
+  "description": "结合 Midway 的 Rax 跨端小程序一体化云开发应用",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "f deploy",
+    "start": "rax-app start",
+    "build": "rax-app build",
+    "eslint": "eslint --ext .js,.jsx,.tsx,.ts ./",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "lint": "npm run eslint && npm run stylelint"
+  },
+  "dependencies": {
+    "@midwayjs/serverless-scf-starter": "*",
+    "@midwayjs/bootstrap": "*",
+    "path-to-regexp": "*",
+    "@midwayjs/hooks": "^2.3.0",
+    "wx-server-sdk": "^2.5.3",
+    "@midwayjs/faas": "^2.11.5",
+    "@midwayjs/hooks-miniprogram-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.0",
+    "@types/rax": "^1.0.0",
+    "@types/wechat-miniprogram": "^3.4.0",
+    "@midwayjs/build-plugin-hooks": "^2.3.0",
+    "build-plugin-rax-miniapp-faas": "^1.0.0",
+    "eslint": "^6.8.0",
+    "prettier": "^2.1.2",
+    "rax-app": "^3.0.0",
+    "stylelint": "^13.7.2",
+    "@ali/build-plugin-rax-app-def": "^3.0.0",
+    "@ali/build-plugin-event-tracking-register": "^1.0.0"
+  },
+  "private": true,
+  "originTemplate": "@rax-materials/scaffolds-app-midway-miniapp",
+  "resolutions": {}
+}
